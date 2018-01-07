@@ -7,6 +7,7 @@ public class ResultInfo implements Serializable {
     private boolean success = true;
     private String id;
     private String msg;
+    private String clientid;
 
     public ResultInfo() {
     }
@@ -38,5 +39,13 @@ public class ResultInfo implements Serializable {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public String getClientid() {
+        return clientid;
+    }
+
+    public void setClientid(String clientid) {
+        this.clientid = clientid;
     }
 }
