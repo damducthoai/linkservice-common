@@ -10,6 +10,7 @@ public class ResultData implements Serializable {
     private String original;
     private String name;
     private String size;
+    private String time;
 
     public ResultData() {
     }
@@ -65,5 +66,13 @@ public class ResultData implements Serializable {
 
     public void setSize(String size) {
         this.size = size;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }
