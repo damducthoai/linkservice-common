@@ -12,7 +12,6 @@ public class RequestData implements Serializable {
 
     private String password;
 
-    @NotNull
     private String clientid;
 
     public RequestData() {

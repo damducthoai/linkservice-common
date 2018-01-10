@@ -11,6 +11,7 @@ public class ResultData implements Serializable {
     private String name;
     private String size;
     private String time;
+    private boolean success;
 
     public ResultData() {
     }
@@ -74,5 +75,13 @@ public class ResultData implements Serializable {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public boolean isSuccess() {
+        return success;
+    }
+
+    public void setSuccess(boolean success) {
+        this.success = success;
     }
 }
