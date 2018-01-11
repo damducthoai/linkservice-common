@@ -11,6 +11,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicHeader;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Util {
@@ -51,6 +52,18 @@ public class Util {
 
         CloseableHttpClient httpClient = HttpClientBuilder.create()
                 .setDefaultRequestConfig(config).setDefaultHeaders(headers).setDefaultCookieStore(cookieStore).build();
+        return httpClient;
+    }
+    public static CloseableHttpClient getAccountClient(String token) {
+        RequestConfig config = RequestConfig.custom().
+                setConnectTimeout(timeout * 1000).
+                setConnectionRequestTimeout(timeout * 1000).
+                setSocketTimeout(timeout * 1000).build();
+        Header header = new BasicHeader("token", token);
+
+        CloseableHttpClient httpClient = HttpClientBuilder.create().setDefaultRequestConfig(config).setDefaultHeaders(new LinkedList<Header>() {{
+            add(header);
+        }}).build();
         return httpClient;
     }
 
