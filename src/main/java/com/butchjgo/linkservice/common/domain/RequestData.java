@@ -22,6 +22,13 @@ public class RequestData implements Serializable {
         this.password = password;
     }
 
+    public RequestData(String id, @NotNull String url, String password, String clientid) {
+        this.id = id;
+        this.url = url;
+        this.password = password;
+        this.clientid = clientid;
+    }
+
     public String getId() {
         return id;
     }
@@ -52,5 +59,9 @@ public class RequestData implements Serializable {
 
     public void setClientid(String clientid) {
         this.clientid = clientid;
+    }
+
+    public RequestData doClone()  {
+        return new RequestData(id,url,password,clientid);
     }
 }

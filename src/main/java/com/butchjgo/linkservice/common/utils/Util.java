@@ -34,6 +34,22 @@ public class Util {
         return httpClient;
     }
 
+    public static CloseableHttpClient getNormalHttpClient(){
+
+        RequestConfig config = RequestConfig.custom().
+                setConnectTimeout(timeout * 1000).
+                setConnectionRequestTimeout(timeout * 1000).
+                setSocketTimeout(timeout * 1000).build();
+        Header userAgent = new BasicHeader(HttpHeaders.USER_AGENT,"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36");
+
+        List<Header> headers = Arrays.asList(userAgent);
+
+
+        CloseableHttpClient httpClient = HttpClientBuilder.create()
+                .setDefaultRequestConfig(config).setDefaultHeaders(headers).build();
+        return httpClient;
+    }
+
     public static CloseableHttpClient getHttpClient(List<Cookie> cookies){
 
         final BasicCookieStore cookieStore = new BasicCookieStore();
