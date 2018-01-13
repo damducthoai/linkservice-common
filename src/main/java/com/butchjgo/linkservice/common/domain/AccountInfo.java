@@ -1,15 +1,28 @@
 package com.butchjgo.linkservice.common.domain;
 
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
+@Entity
+@Table(name = "account")
+@IdClass(AccountEntityPK.class)
 public class AccountInfo implements Serializable {
+
+    @Id
     @NotNull
-    private String email;
+    @Column(name = "name")
+    private String name;
     @NotNull
+    @Column(name = "password")
     private String password;
+    @Id
     @NotNull
+    @Column(name = "server")
     private String server;
+
+    @Column(name = "active")
+    private boolean active;
 
     public String getServer() {
         return server;
@@ -22,18 +35,18 @@ public class AccountInfo implements Serializable {
     public AccountInfo() {
     }
 
-    public AccountInfo(@NotNull String email, @NotNull String password, @NotNull String server) {
-        this.email = email;
+    public AccountInfo(@NotNull String name, @NotNull String password, @NotNull String server) {
+        this.name = name;
         this.password = password;
         this.server = server;
     }
 
-    public String getEmail() {
-        return email;
+    public String getName() {
+        return name;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -52,8 +65,16 @@ public class AccountInfo implements Serializable {
         return super.equals(obj);
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
     @Override
     public int hashCode() {
-        return this.email.concat(server).hashCode();
+        return this.name.concat(server).hashCode();
     }
 }
