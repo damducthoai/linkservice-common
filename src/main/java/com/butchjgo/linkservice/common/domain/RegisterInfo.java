@@ -1,11 +1,15 @@
 package com.butchjgo.linkservice.common.domain;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
 public class RegisterInfo {
     private String server,pattern,chanel;
     private boolean registration = true;
-
-    public RegisterInfo() {
-    }
 
     public RegisterInfo(String server, String pattern, String chanel) {
         this.server = server;
@@ -17,38 +21,6 @@ public class RegisterInfo {
         this.server = server;
         this.pattern = pattern;
         this.chanel = chanel;
-        this.registration = registration;
-    }
-
-    public String getServer() {
-        return server;
-    }
-
-    public void setServer(String server) {
-        this.server = server;
-    }
-
-    public String getPattern() {
-        return pattern;
-    }
-
-    public void setPattern(String pattern) {
-        this.pattern = pattern;
-    }
-
-    public String getChanel() {
-        return chanel;
-    }
-
-    public void setChanel(String chanel) {
-        this.chanel = chanel;
-    }
-
-    public boolean isRegistration() {
-        return registration;
-    }
-
-    public void setRegistration(boolean registration) {
         this.registration = registration;
     }
 

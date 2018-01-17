@@ -1,8 +1,15 @@
 package com.butchjgo.linkservice.common.domain;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
+@Getter
+@Setter
+@NoArgsConstructor
 public class RequestData implements Serializable {
 
     private String id;
@@ -14,9 +21,6 @@ public class RequestData implements Serializable {
 
     private String clientid;
 
-    public RequestData() {
-    }
-
     public RequestData(String url, String password) {
         this.url = url;
         this.password = password;
@@ -26,38 +30,6 @@ public class RequestData implements Serializable {
         this.id = id;
         this.url = url;
         this.password = password;
-        this.clientid = clientid;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getClientid() {
-        return clientid;
-    }
-
-    public void setClientid(String clientid) {
         this.clientid = clientid;
     }
 
