@@ -11,9 +11,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class FileInfo implements Serializable {
 
-    private String url;
-    private String name;
-    private String size;
+    private String url = "";
+    private String name = "";
+    private String size = "";
 
     public FileInfo(String url, String name, String size) {
         this.url = url;
