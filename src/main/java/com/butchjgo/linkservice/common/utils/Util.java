@@ -15,7 +15,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Util {
-    private static int timeout = 3;
+    private static int timeout = 10;
     public static CloseableHttpClient getHttpClient(CookieStore cookieStore){
 
         RequestConfig config = RequestConfig.custom().
@@ -24,7 +24,7 @@ public class Util {
                 setSocketTimeout(timeout * 1000).build();
         Header header = new BasicHeader(
                 HttpHeaders.CONTENT_TYPE, "application/json");
-        Header userAgent = new BasicHeader(HttpHeaders.USER_AGENT,"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36");
+        Header userAgent = new BasicHeader(HttpHeaders.USER_AGENT,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36");
 
         List<Header> headers = Arrays.asList(header, userAgent);
 
