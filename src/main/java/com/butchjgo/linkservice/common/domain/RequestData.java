@@ -21,6 +21,8 @@ public class RequestData implements Serializable {
 
     private String clientid;
 
+    private String chanel;
+
     public RequestData(String url, String password) {
         this.url = url;
         this.password = password;
