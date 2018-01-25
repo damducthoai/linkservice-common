@@ -2,8 +2,6 @@ import com.butchjgo.linkservice.common.service.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.beans.BeanProperty;
-
 public class TestFolder2Link {
     private Url2Text url2Text;
     private Text2Url text2Url;
